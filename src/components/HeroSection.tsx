@@ -1,19 +1,4 @@
 export function HeroSection() {
-    const codeExample = `POST /v1/postcards
-{
-  "to": {
-    "name": "Jane Doe",
-    "address_line1": "123 Main St",
-    "city": "Austin",
-    "state": "TX",
-    "postal_code": "78701",
-    "country": "US"
-  },
-  "front_html": "<h1>Thanks!</h1>",
-  "back_message": "We appreciate you.",
-  "size": "4x6"
-}`
-
     return (
         <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4 bg-surface" id="demo">
             <div className="max-w-6xl mx-auto">
@@ -44,17 +29,13 @@ export function HeroSection() {
                         </p>
                     </div>
 
-                    {/* Right Column - Code Example */}
-                    <div className="card-brutal p-0 overflow-hidden">
-                        <div className="bg-usps-blue px-4 py-2 border-b-4 border-black flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-usps-red border border-black"></div>
-                            <div className="w-3 h-3 rounded-full bg-warning border border-black"></div>
-                            <div className="w-3 h-3 rounded-full bg-success border border-black"></div>
-                            <span className="ml-4 text-white font-mono text-sm">create_postcard.json</span>
-                        </div>
-                        <pre className="code-brutal border-0 shadow-none m-0 text-sm">
-                            <code>{codeExample}</code>
-                        </pre>
+                    {/* Right Column - Journey Flow Diagram */}
+                    <div className="relative">
+                        <img
+                            src="/hero-journey-flow.png"
+                            alt="Journey from OpenClaw prompt to mailbox delivery"
+                            className="w-full h-auto"
+                        />
                     </div>
                 </div>
 
