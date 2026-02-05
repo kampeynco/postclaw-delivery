@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   POSTCLAW NEOBRUTALISM DESIGN SYSTEM
+   USPS Colors + Bold Brutalist Styling
+   ============================================ */
+
+:root {
+  /* USPS Primary Colors */
+  --usps-blue: #004B87;
+  --usps-red: #DA291C;
+  --usps-white: #FFFFFF;
+  --usps-black: #000000;
+  
+  /* Extended Palette */
+  --cream: #FFF8E7;
+  --surface: #F5F5F5;
+  --success: #16A34A;
+  --warning: #FBBF24;
+  
+  /* Neobrutalism Borders */
+  --border-brutal: 4px solid #000000;
+  --border-thin: 2px solid #000000;
+  
+  /* Hard Shadows - No blur, offset */
+  --shadow-brutal: 8px 8px 0px #000000;
+  --shadow-brutal-sm: 4px 4px 0px #000000;
+  --shadow-brutal-lg: 12px 12px 0px #000000;
+}
+
+/* Base Typography */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--usps-white);
+  color: var(--usps-black);
+}
+
+h1, h2, h3 {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+code, pre {
+  font-family: 'Space Mono', monospace;
+}
+
+/* ============================================
+   NEOBRUTALISM COMPONENT CLASSES
+   ============================================ */
+
+@layer components {
+  /* Brutal Card - Core component */
+  .card-brutal {
+    @apply bg-white border-4 border-black;
+    box-shadow: var(--shadow-brutal);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  .card-brutal:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-brutal-lg);
+  }
+
+  /* Primary Button - USPS Blue */
+  .btn-brutal {
+    @apply inline-flex items-center justify-center px-6 py-3 text-lg font-bold text-white bg-usps-blue border-4 border-black cursor-pointer;
+    box-shadow: var(--shadow-brutal-sm);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  
+  .btn-brutal:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal);
+  }
+  
+  .btn-brutal:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+
+  /* CTA Button - USPS Red */
+  .btn-brutal-cta {
+    @apply btn-brutal bg-usps-red;
+  }
+
+  /* Outline Button */
+  .btn-brutal-outline {
+    @apply btn-brutal bg-white text-usps-black;
+  }
+
+  /* Code Block */
+  .code-brutal {
+    @apply font-mono text-sm bg-usps-black text-green-400 p-4 border-4 border-black overflow-x-auto;
+    box-shadow: var(--shadow-brutal-sm);
+  }
+
+  /* Section Container */
+  .section-brutal {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  /* Pricing Card */
+  .pricing-card {
+    @apply card-brutal p-6 md:p-8 flex flex-col;
+  }
+  
+  .pricing-card-featured {
+    @apply pricing-card bg-usps-blue text-white border-usps-red;
+    box-shadow: 12px 12px 0px var(--usps-red);
+  }
+
+  /* Input Fields */
+  .input-brutal {
+    @apply w-full px-4 py-3 border-4 border-black bg-white text-black font-medium;
+    box-shadow: var(--shadow-brutal-sm);
+  }
+  
+  .input-brutal:focus {
+    @apply outline-none ring-0;
+    box-shadow: var(--shadow-brutal);
+  }
+
+  /* Badge */
+  .badge-brutal {
+    @apply inline-block px-3 py-1 text-sm font-bold border-2 border-black;
+    box-shadow: 2px 2px 0px #000000;
+  }
+
+  /* Postcard Preview */
+  .postcard-preview {
+    @apply bg-cream border-4 border-black;
+    box-shadow: var(--shadow-brutal);
+    aspect-ratio: 6 / 4;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@layer utilities {
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .card-brutal,
+    .btn-brutal,
+    .btn-brutal-cta,
+    .btn-brutal-outline {
+      transition: none;
+    }
+  }
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--usps-blue);
+  color: white;
+}
