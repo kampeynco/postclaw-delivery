@@ -65,7 +65,7 @@ export function PricingSection() {
                         <div
                             key={tier.name}
                             className={`
-                flex flex-col p-6 md:p-8 border-4 border-black cursor-pointer
+                relative flex flex-col p-6 md:p-8 border-4 border-black cursor-pointer
                 ${tier.featured
                                     ? 'bg-cream shadow-brutal-lg transform md:-translate-y-4'
                                     : 'bg-white shadow-brutal'
@@ -73,9 +73,9 @@ export function PricingSection() {
                 transition-transform hover:translate-x-[-4px] hover:translate-y-[-4px]
               `}
                         >
-                            {/* Featured Badge */}
+                            {/* Featured Badge - Positioned on top border */}
                             {tier.featured && (
-                                <div className="badge-brutal bg-usps-red text-white mb-4 self-start">
+                                <div className="absolute -top-4 left-4 badge-brutal bg-usps-red text-white">
                                     MOST POPULAR
                                 </div>
                             )}
