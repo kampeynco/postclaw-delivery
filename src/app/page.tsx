@@ -1,4 +1,5 @@
 import { HeroSection } from '@/components/HeroSection'
+import { FeaturesSection } from '@/components/FeaturesSection'
 import { UseCases } from '@/components/UseCases'
 import { HowItWorks } from '@/components/HowItWorks'
 import { ApiSection } from '@/components/ApiSection'
@@ -14,6 +15,7 @@ export default function Home() {
         <main className="min-h-screen bg-surface">
             <Navbar />
             <HeroSection />
+            <FeaturesSection />
             <UseCases />
             <HowItWorks />
             <ApiSection />

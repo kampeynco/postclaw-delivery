@@ -14,13 +14,6 @@ export function HeroSection() {
   "size": "4x6"
 }`
 
-    const features = [
-        'Approval-first: AI initiates, a human confirms',
-        'No API keys to start',
-        'HTML/CSS front + custom message back',
-        'Webhooks + order status',
-    ]
-
     return (
         <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4 bg-surface" id="demo">
             <div className="max-w-6xl mx-auto">
@@ -29,10 +22,10 @@ export function HeroSection() {
                     {/* Left Column - Text Content */}
                     <div>
                         <h1 className="font-display text-4xl md:text-5xl text-usps-black leading-tight mb-6">
-                            Send a real postcard from your AI with one POST request
+                            From prompt to mailbox: OpenClaw mails real postcards
                         </h1>
                         <p className="text-xl text-gray-700 mb-8">
-                            Postclaw turns "agent intent" into physical mail—safely. Your AI creates the postcard + recipient details, we return a Stripe Checkout link for human approval, then we print and mail worldwide.
+                            Postclaw lets your OpenClaw agent draft a postcard, generate a Stripe approval link, then print + mail it in the real world.
                         </p>
 
                         {/* CTAs */}
@@ -63,18 +56,6 @@ export function HeroSection() {
                             <code>{codeExample}</code>
                         </pre>
                     </div>
-                </div>
-
-                {/* Feature Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-                    {features.map((feature) => (
-                        <div
-                            key={feature}
-                            className="card-brutal p-4 bg-white text-center"
-                        >
-                            <p className="text-sm font-medium text-gray-800">{feature}</p>
-                        </div>
-                    ))}
                 </div>
 
                 {/* Stats Row */}
