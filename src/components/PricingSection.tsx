@@ -1,44 +1,47 @@
+import Link from 'next/link'
+
 export function PricingSection() {
     const pricingTiers = [
         {
             size: '4×6"',
             name: 'Standard',
             price: '$1.99',
-            description: 'Perfect for thank-you notes and reminders',
+            description: 'Perfect for thank-yous and reminders.',
             features: [
                 'HTML/CSS front design',
                 'Custom back message',
-                '100lb glossy cardstock',
+                'Premium cardstock',
                 'Worldwide delivery',
-                '3-7 day shipping',
+                'Typical delivery: 3–7 days',
             ],
+            cta: 'Start with Standard',
         },
         {
             size: '6×9"',
             name: 'Large',
             price: '$2.99',
-            description: 'Great for marketing and announcements',
+            description: 'Great for marketing and announcements.',
             features: [
                 'Everything in Standard',
-                '50% more design space',
+                'More design space',
                 'Higher visual impact',
                 'Ideal for promotions',
-                'Same fast shipping',
             ],
             featured: true,
+            cta: 'Start with Large',
         },
         {
-            size: '6x11"',
+            size: '6×11"',
             name: 'Premium',
             price: '$3.99',
-            description: 'Maximum impact for premium gifts',
+            description: 'Maximum impact for photo-heavy cards and premium moments.',
             features: [
                 'Everything in Large',
                 'Maximum design space',
-                'Premium presentation',
-                'Perfect for photos',
-                'Gift-worthy quality',
+                'Best for photos',
+                'Gift-worthy presentation',
             ],
+            cta: 'Start with Premium',
         },
     ]
 
@@ -48,19 +51,18 @@ export function PricingSection() {
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="badge-brutal bg-usps-red text-white mb-4">
-                        SIMPLE PRICING
+                        PRICING
                     </div>
-                    <h2 className="font-display text-4xl md:text-5xl text-white mb-4">
-                        One Price, Everything Included
+                    <h2 className="font-display text-3xl md:text-4xl text-white mb-4">
+                        One price. Everything included.
                     </h2>
                     <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-                        Printing, postage, and worldwide delivery for 4x6 cards—all in one flat rate.
-                        No hidden fees. No subscriptions.
+                        Printing, postage, and worldwide delivery—flat rate per card. No subscriptions.
                     </p>
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     {pricingTiers.map((tier) => (
                         <div
                             key={tier.name}
@@ -95,7 +97,7 @@ export function PricingSection() {
                                 <span className="font-display text-5xl text-usps-blue">
                                     {tier.price}
                                 </span>
-                                <span className="text-gray-600">/card</span>
+                                <span className="text-gray-600">/ card</span>
                             </div>
 
                             {/* Description */}
@@ -121,7 +123,7 @@ export function PricingSection() {
                             </ul>
 
                             {/* CTA */}
-                            <a
+                            <Link
                                 href="/docs"
                                 className={`
                   w-full text-center py-3 px-6 font-bold border-4 border-black cursor-pointer
@@ -132,16 +134,26 @@ export function PricingSection() {
                                     }
                 `}
                             >
-                                Get Started →
-                            </a>
+                                {tier.cta} →
+                            </Link>
                         </div>
                     ))}
                 </div>
 
                 {/* Currency Note */}
-                <div className="text-center mt-8 text-blue-100">
+                <div className="text-center text-blue-100 mb-8">
                     <p>
-                        💳 We accept USD, EUR, GBP, CAD, AUD, and more via Stripe
+                        We accept USD, EUR, GBP, CAD, AUD, and more via Stripe.
+                    </p>
+                </div>
+
+                {/* Enterprise CTA */}
+                <div className="card-brutal p-6 bg-white text-center">
+                    <p className="text-gray-700">
+                        Sending high volume or need invoicing / account controls?{' '}
+                        <a href="mailto:hello@postclaw.delivery" className="font-bold text-usps-blue hover:underline cursor-pointer">
+                            Talk to us →
+                        </a>
                     </p>
                 </div>
             </div>

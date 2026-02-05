@@ -39,13 +39,19 @@ export function Navbar() {
                             href="/docs"
                             className="font-medium text-usps-black hover:text-usps-blue transition-colors cursor-pointer"
                         >
-                            API Docs
+                            Docs
+                        </Link>
+                        <Link
+                            href="/examples"
+                            className="font-medium text-usps-black hover:text-usps-blue transition-colors cursor-pointer"
+                        >
+                            Examples
                         </Link>
                     </div>
 
                     {/* CTA Button */}
                     <Link href="#demo" className="btn-brutal-cta text-base py-2 px-4">
-                        Try API →
+                        Generate Demo Link
                     </Link>
                 </div>
             </div>
