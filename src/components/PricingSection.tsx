@@ -3,7 +3,7 @@ export function PricingSection() {
         {
             size: '4×6"',
             name: 'Standard',
-            price: '$2.99',
+            price: '$1.99',
             description: 'Perfect for thank-you notes and reminders',
             features: [
                 'HTML/CSS front design',
@@ -16,7 +16,7 @@ export function PricingSection() {
         {
             size: '6×9"',
             name: 'Large',
-            price: '$3.99',
+            price: '$2.99',
             description: 'Great for marketing and announcements',
             features: [
                 'Everything in Standard',
@@ -30,7 +30,7 @@ export function PricingSection() {
         {
             size: '6x11"',
             name: 'Premium',
-            price: '$4.99',
+            price: '$3.99',
             description: 'Maximum impact for premium gifts',
             features: [
                 'Everything in Large',
